@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 118m
+sleep 119m
 
 telegram_message() {
 	curl -s -X POST "https://api.telegram.org/bot${BOTTOKEN}/sendMessage" -d chat_id="${CHATID}" \
