@@ -19,14 +19,14 @@ bash ~/git_cookies.sh
 # Rom repo sync & dt ( Add roms and update case functions )
 rom_one(){
      repo init --depth=1 --no-repo-verify -u https://github.com/HyconOS/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
-     git clone https://github.com/TheSanty/local_manifests.git -b $rom .repo/local_manifests
+     git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --no-clone-bundle --no-tags --optimized-fetch --force-sync -j$(nproc --all)
      . build/envsetup.sh && lunch aosp_whyred-user
 }
 
 rom_two(){
      repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-R/android_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
-     git clone https://github.com/TheSanty/local_manifests.git -b $rom .repo/local_manifests
+     git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --no-clone-bundle --no-tags --optimized-fetch --force-sync -j$(nproc --all)
      git clone https://${TOKEN2}@github.com/Corvus-R/.certs certs
      export RAVEN_LAIR=Official
@@ -43,28 +43,28 @@ rom_three(){
 
 rom_four(){
      repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b elle -g default,-device,-mips,-darwin,-notdefault
-     git clone https://github.com/TheSanty/local_manifests.git -b $rom .repo/local_manifests
+     git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --no-clone-bundle --no-tags --optimized-fetch --force-sync -j$(nproc --all)
      . build/envsetup.sh && lunch evolution_whyred-user
 }
 
 rom_five(){
      repo init --depth=1 --no-repo-verify -u https://github.com/KangOS-Snowcone/android_manifest -b snowcone -g default,-device,-mips,-darwin,-notdefault
-     git clone https://github.com/TheSanty/local_manifests.git -b $rom .repo/local_manifests
+     git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --no-clone-bundle --no-tags --optimized-fetch --force-sync -j$(nproc --all)
      . build/envsetup.sh && lunch fluid_whyred-eng
 }
 
 rom_six(){
      repo init --depth=1 --no-repo-verify -u https://github.com/TheSanty/android_manifest.git -b arrow-12.0 -g default,-device,-mips,-darwin,-notdefault
-     git clone https://github.com/TheSanty/local_manifests.git -b $rom .repo/local_manifests
+     git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --no-clone-bundle --no-tags --optimized-fetch --force-sync -j$(nproc --all)
      . build/envsetup.sh && lunch arrow_whyred-eng
 }
 
 rom_seven(){
      repo init --depth=1 --no-repo-verify -u https://github.com/PotatoProject/manifest -b frico-release -g default,-device,-mips,-darwin,-notdefault
-     git clone https://github.com/TheSanty/local_manifests.git -b $rom .repo/local_manifests
+     git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --no-clone-bundle --no-tags --optimized-fetch --force-sync -j$(nproc --all)
      rm -rf hardware/qcom-caf/wlan
      git clone https://github.com/aex-tmp/platform_hardware_qcom_wlan.git -b 12.x hardware/qcom-caf/wlan
@@ -73,7 +73,7 @@ rom_seven(){
 
 rom_eight(){
      repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience-Staging/manifest -b twelve 
-     git clone https://github.com/TheSanty/local_manifests.git -b $rom .repo/local_manifests
+     git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch
      cd build/soong
      git fetch https://github.com/ProtonAOSP/android_build_soong.git
@@ -84,7 +84,7 @@ rom_eight(){
 
 rom_nine(){
      repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b 12 
-     git clone https://github.com/TheSanty/local_manifests.git -b $rom .repo/local_manifests
+     git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
      git clone https://github.com/PixelExperience-Staging/hardware_qcom-caf_msm8998_audio.git hardware/qcom-caf/msm8998/audio
      git clone https://github.com/PixelExperience-Staging/hardware_qcom-caf_msm8998_display.git hardware/qcom-caf/msm8998/display
@@ -94,7 +94,7 @@ rom_nine(){
 
 rom_ten(){
      repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b snow
-     git clone https://github.com/TheSanty/local_manifests.git -b $rom .repo/local_manifests
+     git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
      source build/envsetup.sh && lunch evolution_whyred-eng
 }
