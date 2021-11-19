@@ -96,6 +96,8 @@ rom_ten(){
      repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b snow
      git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+     rm -rf device/qcom/sepolicy-legacy-um
+     git clone https://github.com/PotatoProject/device_qcom_sepolicy-legacy-um.git device/qcom/sepolicy-legacy-um
      source build/envsetup.sh && lunch evolution_whyred-eng
 }
 
