@@ -13,7 +13,7 @@ task:
     BOTTOKEN: "ENCRYPTED[741416e8651f465575584808d76e59f94c3427aa58bf661d9cc5f14c368180702cd9bde49dae8f125a135bdefebd6859]"
     TDRIVE: "ENCRYPTED[2daf2ab175583744461153ab80dcb851659b50584ce6efbb0205f7f9aac2f6cd0b94eff935a42dfbbb65c0b877366c93]"
     GIT_COOKIES: "ENCRYPTED[8ac3afc413a7c546e27897cc3698b6c6cfc9553b1ab5760e5c436231de8eb5f4cc8435b572c77b110abe123e5f9494a3]"
-    T_ROM: "EvolutionOS"
+    T_ROM: "Evo12"
     T_DEVICE: "whyred"
   download_cc_background_script:
       - bash download_ccache.sh
