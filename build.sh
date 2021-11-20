@@ -93,7 +93,7 @@ rom_nine(){
 }
 
 rom_ten(){
-     repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b snow
+     repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b snow -g default,-device,-mips,-darwin,-notdefault
      git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
      rm -rf device/qcom/sepolicy-legacy-um
