@@ -45,6 +45,7 @@ rom_four(){
      repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b elle -g default,-device,-mips,-darwin,-notdefault
      git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --no-clone-bundle --no-tags --optimized-fetch --force-sync -j$(nproc --all)
+     export EVO_BUILD_TYPE=OFFICIAL
      . build/envsetup.sh && lunch evolution_whyred-user
 }
 
