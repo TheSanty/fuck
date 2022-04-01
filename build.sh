@@ -45,6 +45,7 @@ rom_four(){
      repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b elle -g default,-device,-mips,-darwin,-notdefault
      git clone https://github.com/TheSanty/local_manifests.git -b $T_ROM .repo/local_manifests
      repo sync -c --no-clone-bundle --no-tags --optimized-fetch --force-sync -j$(nproc --all)
+     git clone https://${TOKEN}@github.com/TheSanty/evolution_keys vendor/evolution/build/target/product/security
      export EVO_BUILD_TYPE=OFFICIAL
      . build/envsetup.sh && lunch evolution_whyred-user
 }
@@ -201,7 +202,7 @@ case "${T_ROM}" in
     ;;
  "Hycon") mka bacon -j18 2>&1 | tee build.log
     ;;
- "EvolutionOS") mka evolution -j18 2>&1 | tee build.log
+ "EvolutionOS") mka evolution-prod -j18 2>&1 | tee build.log
     ;;
  "KangOS") make bacon -j18 2>&1 | tee build.log
     ;;
